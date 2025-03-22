@@ -7,7 +7,7 @@ export default function Catalogo() {
     const params = useParams();
     const [productos, setProductos] = useState([])
     useEffect(() => {
-        let promesa = obtenerProductos();
+        let promesa = obtenerProductos(params);
         promesa.then((productos) => setProductos(productos))
     }, [params]);
 
