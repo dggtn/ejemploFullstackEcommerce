@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { obtenerProductos } from '../api/api';
 import Producto from './Producto';
+import Spinner from './Spinner';
 
 export default function Catalogo() {
     const params = useParams();
@@ -12,17 +13,28 @@ export default function Catalogo() {
     }, [params]);
 
     return (
-        <div className="bg-white">
-            <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                <h2 className="sr-only">Productos</h2>
-                <div class="mt-4 flex justify-between">
-                {
-                    productos.map((producto) => (
-                        <Producto nombre={producto.nombre} precio={producto.precio} imagen={producto.imagen} key={producto.id}/>
-                    ))
-                }
-            </div>
-            </div>
-        </div>
+        <>
+            {
+                productos.length > 0 ?
+                    (
+                        <div className="bg-white card">
+                            <div className="mx-auto max-w-2xl px-2 py-4 sm:px-3 sm:py-24 lg:max-w-7xl lg:px-4  ">
+                                <div className="grid grid-cols-1 gap-x-2 gap-y-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-4  ">
+
+                                    {
+                                        productos.map((producto) => (
+                                            <Producto nombre={producto.nombre} precio={producto.precio} imagen={producto.imagen} key={producto.id} />
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    ) :
+                    (
+                        <Spinner/>
+                    )
+
+            }
+        </>
     )
 }
