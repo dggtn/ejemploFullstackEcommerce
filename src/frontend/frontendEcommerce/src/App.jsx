@@ -6,6 +6,9 @@ import Detalleproducto from './component/DetalleProducto'
 import Home from './component/Home'
 import Footer  from './component/Footer'
 import Formulario from './component/Formulario'
+import NewsLetter from './component/NewsLetter'
+import SobreNosotros from './component/SobreNosotros'
+import Licencia from './component/Licencia'
 
 function App() {
   return (
@@ -17,7 +20,10 @@ function App() {
         <Route exact path="/categoria/:id" element={<Catalogo />} />
         <Route exact path="/detalle/:id" element={<Detalleproducto />} />
         <Route exact path="/formulario" element={<Formulario />} />
+        <Route exact path="/sobreNosotros" element={<SobreNosotros />} />
+        <Route exact path="/licencia" element={<Licencia />} />
       </Routes>
+      <NewsLetter />
       <Footer/>
     </BrowserRouter>
     
