@@ -1,4 +1,7 @@
+import { NavLink } from "react-router-dom";
+
 export default function Footer() {
+  const activeStyle = "underline underline-offset-4";
   return (
     < footer className="relative isolate overflow-hidden bg-green-900 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -9,44 +12,61 @@ export default function Footer() {
           </div>
           <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
             <li>
-              <div
-                as="a"
-                href="#"
-                
-                className="text-white transition-colors hover:text-green-500 focus:text-green-500"
+              <NavLink
+                to='/sobreNosotros'
+                className={({ isActive }) => isActive ? activeStyle : undefined}
               >
-                Sobre nosotros
-              </div>
+
+                <div
+                  as="a"
+                  href="#"
+
+                  className="text-white transition-colors hover:text-green-500 focus:text-green-500"
+                >
+
+                  Sobre nosotros
+                </div>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/licencia'
+                className={({ isActive }) => isActive ? activeStyle : undefined}
+              >
+                <div
+                  as="a"
+                  href="#"
+
+                  className="text-white transition-colors hover:text-green-500 focus:text-green-500"
+                >
+                  Licencia
+                </div>
+              </NavLink>
             </li>
             <li>
               <div
                 as="a"
                 href="#"
-                
-                className="text-white transition-colors hover:text-green-500 focus:text-green-500"
-              >
-                Licencia
-              </div>
-            </li>
-            <li>
-              <div
-                as="a"
-                href="#"
-                
+
                 className="text-white transition-colors hover:text-green-500 focus:text-green-500"
               >
                 Contribuye
               </div>
             </li>
             <li>
-              <div
-                as="a"
-                href="#"
-              
-                className="text-white transition-colors hover:text-green-500 focus:text-green-500"
+              <NavLink
+                to='/formulario'
+                className={({ isActive }) => isActive ? activeStyle : undefined}
               >
-                Contactanos
-              </div>
+                <div
+                  as="a"
+                  href="#"
+
+                  className="text-white transition-colors hover:text-green-500 focus:text-green-500"
+                >
+                  Contáctanos
+                </div>
+              </NavLink>
             </li>
           </ul>
           <div className="absolute top-0 left-1/2 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
@@ -57,3 +77,4 @@ export default function Footer() {
     </footer>
   );
 }
+
