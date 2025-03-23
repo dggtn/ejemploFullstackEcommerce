@@ -45,6 +45,49 @@ public class RepositorioProductosEnMemoria {
         productos.add(almendras);
         productos.add(nuez);
         productos.add(pistachio);
+
+
+        //lacteos
+
+        Producto lecheVegetalAlmendras = new Producto();
+        Producto yogurtGriego = new Producto();
+        lecheVegetalAlmendras.setNombre("Leche vegetal de Almendras");
+        yogurtGriego.setNombre("yogurt Griego");
+        lecheVegetalAlmendras.setCategoria("lacteos");
+        yogurtGriego.setCategoria("lacteos");
+        lecheVegetalAlmendras.setCantidad(100);
+        yogurtGriego.setCantidad(100);
+        lecheVegetalAlmendras.setPrecio(new BigDecimal("150.00"));
+        yogurtGriego.setPrecio(new BigDecimal("300.00"));
+        yogurtGriego.setId(4);
+        lecheVegetalAlmendras.setId(5);
+        lecheVegetalAlmendras.setImagen("/public/almondMilk.jpg");
+        yogurtGriego.setImagen("/public/yogurtGriego.jpg");
+
+        productos.add(lecheVegetalAlmendras);
+        productos.add(yogurtGriego);
+
+
+
+        //Bebidas
+
+        Producto JugoNatural = new Producto();
+        Producto GaseosaNatural = new Producto();
+        JugoNatural.setNombre("Jugo de fruta natural");
+        GaseosaNatural.setNombre("Gaseosa Natural");
+        JugoNatural.setCategoria("bebidas");
+        GaseosaNatural.setCategoria("bebidas");
+        JugoNatural.setCantidad(100);
+        GaseosaNatural.setCantidad(100);
+        JugoNatural.setPrecio(new BigDecimal("150.00"));
+        GaseosaNatural.setPrecio(new BigDecimal("300.00"));
+        JugoNatural.setId(6);
+        GaseosaNatural.setId(7);
+        JugoNatural.setImagen("/public/jugo.jpg");
+        GaseosaNatural.setImagen("/public/gaseosa.jpg");
+
+        productos.add(JugoNatural);
+        productos.add(GaseosaNatural);
     }
 
     public List<Producto> obtenerTodos() {
