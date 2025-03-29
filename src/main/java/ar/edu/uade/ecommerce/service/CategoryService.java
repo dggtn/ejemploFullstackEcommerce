@@ -9,11 +9,11 @@ import java.util.Optional;
 
 
 
-public class CategoryService {
+public class CategoryService implements IcategoryService {
     private CategoryRepository categoryRepository;
 
     public CategoryService() {
-        categoryRepository = new CategoryRepository();
+
     }
 
     public ArrayList<Category> getCategories() {
