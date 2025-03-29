@@ -14,11 +14,14 @@ public class Producto {
     @Column
     Category categoria;
     @Column
-    private int cantidad;
+    private Integer cantidad;
     @Column
     private BigDecimal precio;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String imagen;
+
+    public Producto() {
+    }
 }
