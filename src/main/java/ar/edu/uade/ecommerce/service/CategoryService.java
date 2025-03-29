@@ -3,12 +3,13 @@ package ar.edu.uade.ecommerce.service;
 import ar.edu.uade.ecommerce.entity.Category;
 import ar.edu.uade.ecommerce.exceptions.CategoryDuplicateException;
 import ar.edu.uade.ecommerce.repository.CategoryRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
 
-
+@Service
 public class CategoryService implements IcategoryService {
     private CategoryRepository categoryRepository;
 
