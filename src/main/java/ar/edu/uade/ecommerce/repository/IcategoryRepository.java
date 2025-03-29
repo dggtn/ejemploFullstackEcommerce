@@ -13,8 +13,8 @@ import java.util.Optional;
 @Repository
 public interface IcategoryRepository extends JpaRepository<Category, Long> {
     public ArrayList<Category>getCategories();
-    public Optional<Category> geyCategoryNyId(int categoryId);
-    public Category createCategory(int newCategoryId,String description)throws CategoryDuplicateException;
+    public Optional<Category> geyCategoryById(Long categoryId);
+    public Category createCategory(String description)throws CategoryDuplicateException;
 
 
 
