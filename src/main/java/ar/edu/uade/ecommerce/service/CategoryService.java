@@ -1,35 +1,36 @@
 package ar.edu.uade.ecommerce.service;
 
 import ar.edu.uade.ecommerce.entity.Category;
+
 import ar.edu.uade.ecommerce.exceptions.CategoryDuplicateException;
-import ar.edu.uade.ecommerce.repository.CategoryRepository;
+import ar.edu.uade.ecommerce.repository.IcategoryRepository;
+import ar.edu.uade.ecommerce.service.Interfaces.IcategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
+import java.util.List;
 import java.util.Optional;
 
 
 @Service
 public class CategoryService implements IcategoryService {
-    private CategoryRepository categoryRepository;
+    @Autowired
+    private IcategoryRepository categoryRepository;
 
-    public CategoryService() {
-
+    public List<Category> getCategories() {
+        return categoryRepository.findAll();
     }
 
-    public ArrayList<Category> getCategories() {
-        return categoryRepository.getCategories();
+    public Optional<Category> getCategoryById(Long categoryId) {
+        return categoryRepository.findById(categoryId);
     }
 
-    public Optional<Category> getCategoryById(int categoryId) {
-        return categoryRepository.getCategoryById(categoryId);
-    }
-
-    public Category createCategory(int newCategoryId, String description) throws CategoryDuplicateException {
-        ArrayList<Category> categories = categoryRepository.getCategories();
+    public Category createCategory( String description) throws CategoryDuplicateException {
+        List<Category> categories = categoryRepository.findAll();
         if (categories.stream().anyMatch(
-                category -> category.getId() == newCategoryId && category.getDescription().equals(description)))
+                category -> category.getDescription().equals(description)))
             throw new CategoryDuplicateException();
-        return categoryRepository.createCategory(newCategoryId, description);
+        return categoryRepository.save(new Category(description));
     }
 }
