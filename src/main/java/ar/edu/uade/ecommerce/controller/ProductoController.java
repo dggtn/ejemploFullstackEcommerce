@@ -1,8 +1,9 @@
 package ar.edu.uade.ecommerce.controller;
 
+import ar.edu.uade.ecommerce.entity.Category;
 import ar.edu.uade.ecommerce.entity.Producto;
-import ar.edu.uade.ecommerce.service.IproductoService;
-import ar.edu.uade.ecommerce.service.ProductoService;
+import ar.edu.uade.ecommerce.service.Interfaces.IcategoryService;
+import ar.edu.uade.ecommerce.service.Interfaces.IproductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,23 +14,23 @@ import java.util.List;
 @CrossOrigin
 public class ProductoController {
     @Autowired
-    private IproductoService servicioDeProductos;
+    private IproductoService productoService ;
 
 
     @GetMapping
-    public List<Producto> listarProductos(@RequestParam (required = false) String categoria) {
-        if (categoria != null && !categoria.isEmpty()){
-            return servicioDeProductos.obtenerProductosXCategoria(categoria);
+    public List<Producto> listarProductos(@RequestParam (required = false) Category categoria) {
+        if (categoria != null){
+            return productoService.obtenerProductosXCategoria(categoria);
 
         }else{
-            return servicioDeProductos.obtenerProductos();
+            return productoService.obtenerProductos();
 
         }
     }
 
     @PostMapping
     public void agregarProducto(@RequestBody Producto producto){
-        servicioDeProductos.agregarProducto(producto);
+        productoService.agregarProducto(producto);
 
     }
 
