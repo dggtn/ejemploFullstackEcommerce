@@ -5,8 +5,7 @@ import ar.edu.uade.ecommerce.entity.dto.CategoryRequest;
 import ar.edu.uade.ecommerce.exceptions.CategoryDuplicateException;
 import ar.edu.uade.ecommerce.service.Interfaces.IcategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.net.URI;
@@ -15,9 +14,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 
 
 @RestController
@@ -41,10 +37,10 @@ public class CategoryController  {
         return ResponseEntity.noContent().build();
     }
 
-//    @PostMapping
-//    public ResponseEntity<Object> createCategory(@RequestBody CategoryRequest categoryRequest)
-//            throws CategoryDuplicateException {
-//        Category result = categoryService.createCategory(categoryRequest.getId(), categoryRequest.getDescription());
-//        return ResponseEntity.created(URI.create("/categories/" + result.getId())).body(result);
-//    }
+    @PostMapping
+    public ResponseEntity<Object> createCategory(@RequestBody CategoryRequest categoryRequest)
+            throws CategoryDuplicateException {
+        Category result = categoryService.createCategory( categoryRequest.getDescription());
+        return ResponseEntity.created(URI.create("/categories/" + result.getId())).body(result);
+    }
 }
