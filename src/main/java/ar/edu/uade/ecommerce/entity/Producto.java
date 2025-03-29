@@ -1,4 +1,4 @@
-package ar.edu.uade.ecommerce.modelo;
+package ar.edu.uade.ecommerce.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
