@@ -18,7 +18,7 @@ import java.util.function.Function;
 
 
 @Repository
-public class CategoryRepository extends JpaRepository {
+public class CategoryRepository extends JpaRepository<Category,long > {
     private ArrayList<Category> categories;
 
     public CategoryRepository() {
