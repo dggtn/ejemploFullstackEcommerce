@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProductosService implements ServcioInterfaz{
+public class ProductoService implements IproductoService {
     private RepositorioProductosEnMemoria repositorioProductosEnMemoria;
-    public ProductosService(@Autowired RepositorioProductosEnMemoria repositorioProductosEnMemoria) {
+    public ProductoService(@Autowired RepositorioProductosEnMemoria repositorioProductosEnMemoria) {
         this.repositorioProductosEnMemoria = repositorioProductosEnMemoria;
     }
 
