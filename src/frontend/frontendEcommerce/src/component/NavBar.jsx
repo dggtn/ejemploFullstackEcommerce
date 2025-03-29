@@ -50,17 +50,6 @@ export default function NavBar() {
                         <h1 className="text-white text-xl">Harinas</h1>
                     </NavLink>
                 </li>
-
-                <li className='"text-white transition-colors hover:text-green-500 focus:text-green-500"'>
-                    <NavLink
-                        to='/recetas'
-                        className={({ isActive }) => isActive ? activeStyle : undefined}
-                    >
-                        <h1 className="text-white text-xl">Recetas</h1>
-                    </NavLink>
-                </li>
-
-
                 <li className='"text-white transition-colors hover:text-green-500 focus:text-green-500"'>
                     <span className="sr-only text-white">Buscar</span>
                     <svg className="size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">

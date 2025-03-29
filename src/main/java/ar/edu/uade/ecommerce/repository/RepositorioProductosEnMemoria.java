@@ -2,7 +2,6 @@ package ar.edu.uade.ecommerce.repositorios;
 
 
 import ar.edu.uade.ecommerce.modelo.Producto;
-import ar.edu.uade.ecommerce.modelo.Receta;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;

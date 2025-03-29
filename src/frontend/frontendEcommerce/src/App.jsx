@@ -9,8 +9,7 @@ import Formulario from './component/Formulario'
 import NewsLetter from './component/NewsLetter'
 import SobreNosotros from './component/SobreNosotros'
 import Licencia from './component/Licencia'
-import Receta from './component/Receta'
-import CatalogoRecetas from './component/CatalogoRecetas'
+
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Route exact path="/formulario" element={<Formulario />} />
         <Route exact path="/sobreNosotros" element={<SobreNosotros />} />
         <Route exact path="/licencia" element={<Licencia />} />
-        <Route exact path="recetas" element={<CatalogoRecetas/>} />
       </Routes>
       <NewsLetter />
       <Footer/>

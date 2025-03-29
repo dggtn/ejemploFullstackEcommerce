@@ -1,21 +1,19 @@
 package ar.edu.uade.ecommerce.controller;
 
-import ar.edu.uade.ecommerce.modelo.Producto;
-import ar.edu.uade.ecommerce.servicios.ServicioDeProductos;
+import ar.edu.uade.ecommerce.entity.Producto;
+import ar.edu.uade.ecommerce.service.ProductosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping ("/productos")
 @CrossOrigin
 public class ProductoController {
-    private final ServicioDeProductos servicioDeProductos;
+    private final ProductosService servicioDeProductos;
 
-    public ProductoController(@Autowired ServicioDeProductos servicioDeProductos) {
+    public ProductoController(@Autowired ProductosService servicioDeProductos) {
         this.servicioDeProductos =  servicioDeProductos;
     }
 
