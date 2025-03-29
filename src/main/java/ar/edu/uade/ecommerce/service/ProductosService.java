@@ -1,6 +1,6 @@
 package ar.edu.uade.ecommerce.service;
 
-import ar.edu.uade.ecommerce.modelo.Producto;
+import ar.edu.uade.ecommerce.entity.Producto;
 import ar.edu.uade.ecommerce.repository.RepositorioProductosEnMemoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ServicioDeProductos implements ServcioInterfaz{
+public class ProductosService implements ServcioInterfaz{
     private RepositorioProductosEnMemoria repositorioProductosEnMemoria;
-    public ServicioDeProductos(@Autowired RepositorioProductosEnMemoria repositorioProductosEnMemoria) {
+    public ProductosService(@Autowired RepositorioProductosEnMemoria repositorioProductosEnMemoria) {
         this.repositorioProductosEnMemoria = repositorioProductosEnMemoria;
     }
 
