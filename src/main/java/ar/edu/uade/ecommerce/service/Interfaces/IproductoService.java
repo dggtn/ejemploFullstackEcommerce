@@ -1,6 +1,7 @@
-package ar.edu.uade.ecommerce.service;
+package ar.edu.uade.ecommerce.service.Interfaces;
 
 
+import ar.edu.uade.ecommerce.entity.Category;
 import ar.edu.uade.ecommerce.entity.Producto;
 
 import java.util.List;
@@ -11,8 +12,7 @@ public interface IproductoService {
     public void agregarProducto(Producto producto) ;
 
 
-    public List<Producto> obtenerProductosXCategoria(String categoria);
-
+    public List<Producto> obtenerProductosXCategoria(Category categoria);
 
 }
 
