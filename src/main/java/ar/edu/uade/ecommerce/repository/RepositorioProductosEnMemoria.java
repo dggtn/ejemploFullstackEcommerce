@@ -1,7 +1,7 @@
-package ar.edu.uade.ecommerce.repositorios;
+package ar.edu.uade.ecommerce.repository;
 
 
-import ar.edu.uade.ecommerce.modelo.Producto;
+import ar.edu.uade.ecommerce.entity.Producto;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
