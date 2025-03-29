@@ -1,19 +1,24 @@
 package ar.edu.uade.ecommerce.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
+@Builder
+@Entity
 public class Producto {
+    @Column
     private String nombre;
-    private String categoria;
+    @Column
+    Category categoria;
+    @Column
     private int cantidad;
+    @Column
     private BigDecimal precio;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String imagen;
 }
