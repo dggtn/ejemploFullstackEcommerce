@@ -3,7 +3,7 @@ package ar.edu.uade.ecommerce.controller;
 import ar.edu.uade.ecommerce.entity.Category;
 import ar.edu.uade.ecommerce.entity.dto.CategoryRequest;
 import ar.edu.uade.ecommerce.exceptions.CategoryDuplicateException;
-import ar.edu.uade.ecommerce.service.CategoryService;
+import ar.edu.uade.ecommerce.service.IcategoryService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,11 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequestMapping("categories")
 public class CategoryController {
-    private CategoryService categoryService;
+    private IcategoryService categoryService;
 
-    public CategoryController() {
-        categoryService = new CategoryService();
-    }
 
     @GetMapping
     public ResponseEntity<ArrayList<Category>> getCategories() {
