@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
 @Entity
 public class Category {
     @Id
@@ -13,4 +12,11 @@ public class Category {
     private long id;
     @Column
     private String description;
+
+    public Category(String description) {
+        this.description = description;
+    }
+
+    public Category() {
+    }
 }
