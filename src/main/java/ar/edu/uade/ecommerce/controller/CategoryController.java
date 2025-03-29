@@ -4,6 +4,7 @@ import ar.edu.uade.ecommerce.entity.Category;
 import ar.edu.uade.ecommerce.entity.dto.CategoryRequest;
 import ar.edu.uade.ecommerce.exceptions.CategoryDuplicateException;
 import ar.edu.uade.ecommerce.service.IcategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,10 +19,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+
 @RestController
 @RequestMapping("categories")
 public class CategoryController {
-    private IcategoryService categoryService;
+    @Autowired
+    private IcategoryService categoryService ;
 
 
     @GetMapping
