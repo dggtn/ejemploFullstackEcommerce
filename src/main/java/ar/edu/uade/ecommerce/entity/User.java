@@ -4,6 +4,9 @@ package ar.edu.uade.ecommerce.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
+
 @Entity
 @Data
 public class User {
@@ -20,5 +23,7 @@ public class User {
 
     @Column
     private String surname;
+    @OneToMany
+    private List<Order> orders;
 
 }
