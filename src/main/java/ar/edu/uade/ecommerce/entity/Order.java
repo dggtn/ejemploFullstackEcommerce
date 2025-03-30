@@ -13,5 +13,8 @@ public class Order {
 
     @Column
     private Long count;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }
